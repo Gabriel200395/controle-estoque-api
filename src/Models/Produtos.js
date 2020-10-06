@@ -5,7 +5,6 @@ const produtoSchema = new mongoose.Schema({
 
     usuarioId: {
         type: mongoose.Schema.Types.ObjectId,
-        required: true,
         ref: 'Usuario'
     },
     descricao: {

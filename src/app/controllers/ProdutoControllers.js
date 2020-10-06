@@ -8,13 +8,13 @@ module.exports = {
             const produto = await Produto.find({});
             return res.json({
                 erro: false,
-                messsge: "foi possivel listar todas as empresas conforme foi solicitado",
+                messsge: "foi possivel listar todas as produtos conforme foi solicitado",
                 produto
             })
         } catch (err) {
             return res.status(400).json({
                 erro: true,
-                message: "não foi possivel listar as empresas"
+                message: "não foi possivel listar as produtos"
             });
         }
     },
@@ -22,16 +22,16 @@ module.exports = {
 
     async listaIdProduto(req, res) {
         try {
-            const idEmpresa = await Produto.findOne({ _id: req.params.id });
+            const idProduto = await Produto.findOne({ _id: req.params.id });
             return res.json({
                 erro: false,
-                messsge: "foi possivel listar todos os ids das empresas conforme foi solicitado",
-                idEmpresa
+                messsge: "foi possivel listar todos os ids das produtos conforme foi solicitado",
+                idProduto
             });
         } catch (err) {
             return res.status(400).json({
                 erro: true,
-                message: "não foi possivel listar as empresas"
+                message: "não foi possivel listar as produtos"
             })
         }
     },
@@ -42,14 +42,14 @@ module.exports = {
             const adicionaEmpresa = await Produto.create(req.body);
             return res.json({
                 erro: false,
-                message: "Empresa adicionada com sucesso",
+                message: "produto adicionada com sucesso",
                 adicionaEmpresa
 
             });
         } catch (err) {
             return res.status(400).json({
                 erro: true,
-                message: "Erro ao adicionar a empresa"
+                message: "Erro ao adicionar a produto"
             })
         }
     },
@@ -59,12 +59,12 @@ module.exports = {
             await Produto.deleteOne({ _id: req.params.id });
             return res.json({
                 erro: false,
-                message: "Empresa excluida com sucesso"
+                message: "produto excluida com sucesso"
             });
         } catch (err) {
             return res.status(400).json({
                 erro: true,
-                message: "Empresa não excluida com sucesso"
+                message: "produto não excluida com sucesso"
             })
         }
     },
@@ -79,7 +79,7 @@ module.exports = {
         } catch (err) {
             return res.status(400).json({
                 erro: true,
-                message: "não foi possivel alterar a empresa"
+                message: "não foi possivel alterar a produto"
             })
         }
     }
