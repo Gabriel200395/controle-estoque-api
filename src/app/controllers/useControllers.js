@@ -1,9 +1,9 @@
-const Usuarios = require('../../Models/Usuarios');
+const Usuario = require('../../Models/Usuarios');
 
 module.exports = {
   async listarUsuarios(req, res) {
     try {
-      const usuarios = await Usuarios.find({});
+      const usuarios = await Usuario.find({});
       return res.json({
         erro: false,
         usuarios,
@@ -18,7 +18,7 @@ module.exports = {
 
   async listaId(req, res) {
     try {
-      const idUsuario = await Usuarios.findOne({ _id: req.params.id });
+      const idUsuario = await Usuario.findOne({ _id: req.params.id });
       return res.json({
         erro: false,
         idUsuario,
@@ -33,7 +33,7 @@ module.exports = {
 
   async adiconaUsuario(req, res) {
     try {
-      const usuario = await Usuarios.create(req.body);
+      const usuario = await Usuario.create(req.body);
       return res.json({
         erro: false,
         mensagem: 'Usuário cadastrado com sucesso',
@@ -49,7 +49,7 @@ module.exports = {
 
   async deleteUser(req, res) {
     try {
-      await Usuarios.deleteOne({ _id: req.params.id });
+      await Usuario.deleteOne({ _id: req.params.id});
       return res.json({
         erro: false,
         mensagem: 'Usuário excluido com sucesso com sucesso',
@@ -64,7 +64,7 @@ module.exports = {
 
   async alteraUsuario(req, res) {
     try {
-      await Usuarios.updateOne({ _id: req.params.id }, req.body);
+      await Usuario.updateOne({ _id: req.params.id }, req.body);
       return res.json({
         erro: false,
         mensagem: 'Usuário modificado com sucesso',

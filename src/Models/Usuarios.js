@@ -1,5 +1,5 @@
 const mongoose = require('mongoose')
-const Produtos = require('../Models/Produtos')
+const Produto = require('../Models/Produtos')
 
 const usuarioSchema = new mongoose.Schema({
 
@@ -34,6 +34,12 @@ const usuarioSchema = new mongoose.Schema({
         foreignField: 'usuarioId'  
     })
 
+    /*usuarioSchema.pre('remove', async function(next) {
+        await Produto.deleteMany({ usuarioId: this._id });
+        next();
+    });*/
+      
+      
 const Usuario = mongoose.model('Usuario', usuarioSchema); 
 
 module.exports = Usuario;

@@ -34,9 +34,10 @@ module.exports = {
                 message: "não foi possivel listar as produtos"
             })
         }
-    },
+    }, 
 
 
+    
     async adicionaProduto(req, res) {
         try {
             const adicionaEmpresa = await Produto.create(req.body);
@@ -56,7 +57,7 @@ module.exports = {
 
     async deleteProduto(req, res) {
         try {
-            await Produto.deleteOne({ _id: req.params.id });
+            await Produto.deleteOne({_id: req.params.id });
             return res.json({
                 erro: false,
                 message: "produto excluida com sucesso"
