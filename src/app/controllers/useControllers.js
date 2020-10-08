@@ -1,5 +1,6 @@
 const Usuario = require('../../Models/Usuarios');
-
+const Produto = require('../../Models/Produtos');
+ 
 module.exports = {
   async listarUsuarios(req, res) {
     try {
@@ -45,6 +46,26 @@ module.exports = {
         mensagem: 'Não foi possivel cadastrar usuário',
       });
     }    
+  },
+
+
+
+
+  async listaProdutosUsuario(req, res) {
+     const usuarioId = req.params.id
+    try {
+      const produtos = await Produto.find({usuarioId});
+      return res.json({
+        erro: false,
+        mensagem: ' produtos listado com sucesso!',
+        produtos
+      });
+    } catch {
+      return res.status(400).json({
+        erro: true,
+        mensagem: 'Não foi possivel excluir usuário',
+      });
+    }
   },
 
   async deleteUser(req, res) {

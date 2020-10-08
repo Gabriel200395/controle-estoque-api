@@ -40,11 +40,11 @@ module.exports = {
     
     async adicionaProduto(req, res) {
         try {
-            const adicionaEmpresa = await Produto.create(req.body);
+            const produtoEmpresa = await Produto.create(req.body);
             return res.json({
                 erro: false,
                 message: "produto adicionada com sucesso",
-                adicionaEmpresa
+                produtoEmpresa
 
             });
         } catch (err) {
@@ -53,7 +53,7 @@ module.exports = {
                 message: "Erro ao adicionar a produto"
             })
         }
-    },
+    },    
 
     async deleteProduto(req, res) {
         try {
