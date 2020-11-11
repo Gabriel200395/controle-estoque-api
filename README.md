@@ -1,7 +1,14 @@
 ## :wrench: Tecnologias
 
 <!--EXEMPLO:-->
-- [React](https://pt-br.reactjs.org/)
+- [Node JS](https://nodejs.org/en)
+- [Cors](https://www.npmjs.com/package/cors)
+- [express](https://www.npmjs.com/package/express)
+- [mongoDB](https://www.mongodb.com/try/download/compass)
+- [Mongoose](https://www.npmjs.com/package/mongoose)
+- [Nodemon](https://www.npmjs.com/package/nodemon)
+
+
 
 ## :page_facing_up: Sobre
 
