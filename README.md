@@ -14,8 +14,7 @@
 - Entrar na pasta do projeto: `cd controle-estoque-api`;
 - Instalar as dependências: `npm install`;
 - Iniciar a aplicação: `npm start`.
-- obs Caso no Projeto Cors da ruim instaler ele novamente (npm install cors)
-
+- OBS: Caso o projeto de erro no cors (npm install cors)
 
 ## :pencil: Autor
 
