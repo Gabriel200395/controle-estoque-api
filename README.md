@@ -8,20 +8,13 @@
 - [Mongoose](https://www.npmjs.com/package/mongoose)
 - [Nodemon](https://www.npmjs.com/package/nodemon)
 
-
-
-## :page_facing_up: Sobre
-
-Descrição sobre o projeto
-
 ## 💻 Como usar
 
-- Clone o projeto: `git clone link-do-projeto`;
-- Entrar na pasta do projeto: `cd nome-do-projeto`;
+- Clone o projeto: `git clone https://github.com/Gabriel200395/controle-estoque-api.git`;
+- Entrar na pasta do projeto: `cd controle-estoque-api`;
 - Instalar as dependências: `npm install`;
 - Iniciar a aplicação: `npm start`.
-
-Irá abrir uma página no browser (se não abrir, vá até [http://localhost:8080](http://localhost:8080/)).
+- obs Caso no Projeto Cors da ruim instaler ele novamente (npm install cors)
 
 
 ## :pencil: Autor
