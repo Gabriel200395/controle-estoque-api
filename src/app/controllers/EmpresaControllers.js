@@ -1,13 +1,13 @@
-const Usuario = require('../../Models/Usuarios');
+const Empresa = require('../../Models/Empresa');
 const Produto = require('../../Models/Produtos');
- 
+
 module.exports = {
-  async listarUsuarios(req, res) {
+  async listarEmpresa(req, res) {
     try {
-      const usuarios = await Usuario.find({});
+      const listEmpresa = await Empresa.find({});
       return res.json({
         erro: false,
-        usuarios,
+        listEmpresa,
       });
     } catch (err) {
       return res.status(400).json({
@@ -17,12 +17,12 @@ module.exports = {
     }
   },
 
-  async listaId(req, res) {
+  async listaIdEmpresa(req, res) {
     try {
-      const idUsuario = await Usuario.findOne({ _id: req.params.id });
+      const idEmpresa = await Empresa.findOne({ _id: req.params.id });
       return res.json({
         erro: false,
-        idUsuario,
+        idEmpresa,
       });
     } catch (err) {
       return res.status(400).json({
@@ -32,45 +32,45 @@ module.exports = {
     }
   },
 
-  async adiconaUsuario(req, res) {
+  async adiconaEmpresa(req, res) {
     try {
-      const usuario = await Usuario.create(req.body);
+      const addEmpresa = await Empresa.create(req.body);
       return res.json({
         erro: false,
         mensagem: 'Usuário cadastrado com sucesso',
-        usuario,
+        addEmpresa,
       });
     } catch (err) {
       return res.status(400).json({
         erro: true,
         mensagem: 'Não foi possivel cadastrar usuário',
       });
-    }    
+    }
   },
 
 
-
-
-  async listaProdutosUsuario(req, res) {
-     const usuarioId = req.params.id
+  async listaProdutosEmpresa(req, res) {
+    const empresaId = req.params.id
     try {
-      const produtos = await Produto.find({usuarioId});
+      const produtos = await Produto.find({ empresaId });
       return res.json({
         erro: false,
-        mensagem: ' produtos listado com sucesso!',
+        mensagem: "produto listado de acordo com Empresa",
         produtos
       });
     } catch {
       return res.status(400).json({
         erro: true,
-        mensagem: 'Não foi possivel excluir usuário',
-      });
+        mensagem: " não foi possivel lista produto de acordo com Empresa",
+      })
     }
+
   },
 
-  async deleteUser(req, res) {
+  async deleteEmpresa(req, res) {
     try {
-      await Usuario.deleteOne({ _id: req.params.id});
+      const deletEmpresa = await Empresa.findOne({ _id: req.params.id })
+      await deletEmpresa.remove()
       return res.json({
         erro: false,
         mensagem: 'Usuário excluido com sucesso com sucesso',
@@ -83,9 +83,9 @@ module.exports = {
     }
   },
 
-  async alteraUsuario(req, res) {
+  async alteraEmpresa(req, res) {
     try {
-      await Usuario.updateOne({ _id: req.params.id }, req.body);
+      await Empresa.updateOne({ _id: req.params.id }, req.body);
       return res.json({
         erro: false,
         mensagem: 'Usuário modificado com sucesso',

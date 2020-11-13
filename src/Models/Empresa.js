@@ -1,7 +1,7 @@
 const mongoose = require('mongoose')
-const Produto = require('../Models/Produtos')
+const Produtos = require('../Models/Produtos')
 
-const usuarioSchema = new mongoose.Schema({
+const empresaSchema = new mongoose.Schema({
 
     empresa: {
         type: String,
@@ -28,18 +28,18 @@ const usuarioSchema = new mongoose.Schema({
         timestamps: true,
     });
 
-    usuarioSchema.virtual('Produtos', {
+    empresaSchema.virtual('Produtos', {
         ref:'Produto', 
         localField: '_id',
-        foreignField: 'usuarioId'  
+        foreignField: 'empresaId'  
     })
 
-    /*usuarioSchema.pre('remove', async function(next) {
-        await Produto.deleteMany({ usuarioId: this._id });
+    empresaSchema.pre('remove', async function(next) {
+        await Produtos.deleteMany({ empresaId: this._id });
         next();
-    });*/
+    });
       
       
-const Usuario = mongoose.model('Usuario', usuarioSchema); 
+const Empresa = mongoose.model('Empresa', empresaSchema); 
 
-module.exports = Usuario;
+module.exports = Empresa;

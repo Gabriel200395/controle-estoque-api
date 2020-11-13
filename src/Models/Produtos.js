@@ -3,9 +3,9 @@ const mongoose = require('mongoose')
 
 const produtoSchema = new mongoose.Schema({
 
-    usuarioId: {
+    empresaId: {
         type: mongoose.Schema.Types.ObjectId,
-        ref: 'Usuario'
+        ref: 'Empresa'
     },
     descricao: {
         type: String,
