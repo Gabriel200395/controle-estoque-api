@@ -12,7 +12,7 @@ module.exports = {
     } catch (err) {
       return res.status(400).json({
         erro: true,
-        mensagem: 'Não foi possivel lista os usuários',
+        mensagem: 'Não foi possivel lista as empresas',
       });
     }
   },
@@ -27,7 +27,7 @@ module.exports = {
     } catch (err) {
       return res.status(400).json({
         erro: true,
-        mensagem: 'Não foi possivel lista os id dos usuários',
+        mensagem: 'Não foi possivel lista o id da empresa',
       });
     }
   },
@@ -37,13 +37,13 @@ module.exports = {
       const addEmpresa = await Empresa.create(req.body);
       return res.json({
         erro: false,
-        mensagem: 'Usuário cadastrado com sucesso',
+        mensagem: 'Empresa cadastrado com sucesso',
         addEmpresa,
       });
     } catch (err) {
       return res.status(400).json({
         erro: true,
-        mensagem: 'Não foi possivel cadastrar usuário',
+        mensagem: 'Não foi possivel cadastrar empresa',
       });
     }
   },
