@@ -73,12 +73,12 @@ module.exports = {
       await deletEmpresa.remove()
       return res.json({
         erro: false,
-        mensagem: 'Usuário excluido com sucesso com sucesso',
+        mensagem: 'Empresa excluido com sucesso com sucesso',
       });
     } catch {
       return res.status(400).json({
         erro: true,
-        mensagem: 'Não foi possivel excluir usuário',
+        mensagem: 'Não foi possivel excluir Empresa',
       });
     }
   },
@@ -88,12 +88,12 @@ module.exports = {
       await Empresa.updateOne({ _id: req.params.id }, req.body);
       return res.json({
         erro: false,
-        mensagem: 'Usuário modificado com sucesso',
+        mensagem: 'Empresa modificado com sucesso',
       });
     } catch {
       return res.status(400).json({
         erro: true,
-        mensagem: 'Não foi possivel modificar usuário',
+        mensagem: 'Não foi possivel modificar empresa',
       });
     }
   },
